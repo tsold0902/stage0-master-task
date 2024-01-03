@@ -1,40 +1,33 @@
 package com.epam.OOP;
 
-public class Animal {
-  private String color;
-		private int numberOfPaws;
-		private boolean hasFur;
-		
-	public Animal()
-	{
-		
-	}
-	
-	public Animal(String color, int numberOfPaws, boolean hasFur) 
-	{
-		this.color=color;
-		this.numberOfPaws=numberOfPaws;
-		this.hasFur=hasFur;
-	}
-	
-	public String getDescription()
-	{
-		String furDescription = hasFur ? "a" : "no";
-        String pawsDescription = (numberOfPaws == 1) ? "paw" : "paws";
-        
-		return  "This animal is mostly " + color + ". It has " + numberOfPaws + " " + pawsDescription + " and " + furDescription + " fur.";
-	}
-	
+class Dog extends Animal {
+    public Dog() {
+        super("brown", 4, true); // Assuming default values for a dog
+    }
 
-	public static void main(String[] args) {
-		Dog myDog = new Dog();
-		Bird myBird = new Bird();
-		
-		Animal myAnimal = new Animal("black", 2, true);			//TASK 1
-		System.out.println(myAnimal.getDescription());
-		
-		System.out.println("Dog: " + myDog.getDescription());
-		System.out.println("Bird: " + myBird.getDescription());
-
-	}	
+    // You can add additional properties and methods specific to a Dog
 }
+
+class Bird extends Animal {
+    public Bird() {
+        super("colorful", 2, false); // Assuming default values for a bird
+    }
+
+    // You can add additional properties and methods specific to a Bird
+}
+
+public class Animal {
+    // ... existing code
+
+    public static void main(String[] args) {
+        Dog myDog = new Dog();
+        Bird myBird = new Bird();
+
+        Animal myAnimal = new Animal("black", 2, true); // TASK 1
+        System.out.println(myAnimal.getDescription());
+
+        System.out.println("Dog: " + myDog.getDescription());
+        System.out.println("Bird: " + myBird.getDescription());
+    }
+}
+
